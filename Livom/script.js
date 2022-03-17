@@ -9,3 +9,4 @@ menu.onclick = function(){
         item.style.right = '-300px';
     }  
 }
+ 

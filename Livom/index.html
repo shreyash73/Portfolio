@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Livom Cosmetics and Dental </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -157,14 +158,16 @@
         </div>
         <div id="contacts" class="contacts">
             <div class="form">
+                <form onsubmit="sendEmail();reset();">
                 <h2>Feel Free To Ask Anything</h2>
                 <div class="submit">
                     <input type="text" name="" placeholder="Name">
-                    <input type="email" name="" placeholder="Email">
+                    <input type="tel" name="" placeholder="Number">
                     <textarea placeholder="Message"></textarea>
-                    <a href="#"> Send Message</a>
+                    <button type="submit">Send Message</button>
                 </div>
-            </div>
+            </form>
+            </div> 
             <div class="map">
                 <h2>Where you can find us ?</h2>
                 <p><i class="fa fa-map-pin" aria-hidden="true"></i></i> Office No 211, Kamat Enclave, Behind Caculo Mall, St-Inez-Goa, 403002</p>
@@ -172,9 +175,9 @@
             </div>
         </div>
         <div class="footer">
-            <p>Copyright © 2022 Livom Pharma</p>
+            <p>Copyright © 2022 Livom Pharma <br> Design - Shreyash Shanbhag</p>
             <p><i class="fa fa-envelope" aria-hidden="true"></i> livompharma@gmail.com <br>
-                <i class="fa fa-phone" aria-hidden="true"></i> 8888695210
+                <i class="fa fa-phone" aria-hidden="true"></i> 8551035376
 
             </p>
 
@@ -184,5 +187,21 @@
             AOS.init();
           </script>
         <script src="script.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "shreyashshanbhag@gmail.com",
+                    Password : "",
+                    To : 'shreyashshanbhag@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "New Contact For Enquiry",
+                    Body : "And this is the body"
+                }).then(
+                message => alert(message)
+);
+            }
+        </script>
     </body>
 </html>
